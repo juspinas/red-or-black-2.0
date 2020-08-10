@@ -1,0 +1,23 @@
+{
+  "name": "red-or-black-2.0",
+  "version": "1.0.0",
+  "description": "A simple red or black card game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juspinas/red-or-black-2.0.git"
+  },
+  "author": "Justin Espinas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juspinas/red-or-black-2.0/issues"
+  },
+  "homepage": "https://github.com/juspinas/red-or-black-2.0#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
