@@ -63,18 +63,21 @@
     <section>
         <div class="columns is-mobile is-centered">
             <div class="column is-half">
-                <h1 id="remainingText">Remaining Cards: <span id="cardCount"></span></h1>
-                    <figure class="image is-centered mt-2">
+                <h1 id="pointText">Points: <span id="pointCount">0</span></h1>
+                    <figure id="cardImage"class="image is-centered mt-2">
                         <img id="cardDisplay"
                             src="https://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_1024x1024.png?v=1523371937">
                     </figure>
-                <div id="redBlackContainer"class="buttons has-addons is-centered are-large mt-2">
+                <h1 id="remainingText">Remaining Cards: <span id="cardCount"></span></h1>
+                <div id="redBlackContainer"class="buttons has-addons is-centered are-large mt-2 mb-0">
                     <button id="redButton" class="button">Red</button>
                     <button id="blackButton" class="button">Black</button>
                 </div>
-                <div id="nextButtonContainer" class="buttons has-addons is-centered are-large mt-2 is-hidden">
+                <div id="nextButtonContainer" class="buttons has-addons is-centered are-large mt-2 mb-0 is-hidden">
                     <button id="nextButton" class="button">Next</button>
                 </div>
+                <div id="test" class="has-text-centered is-italic"></div>
+                <div id="deckId" class="has-text-centered is-italic has-text-weight-light mt-0"></div>
             </div>
         </div>
     </section>
