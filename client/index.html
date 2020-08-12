@@ -12,30 +12,70 @@
 
 <body>
     <!-- HEADER -->
-    <section class="hero is-primary has-background-success">
-        <div class="hero-body">
+    <section class="hero is-light">
+        <!-- <div class="hero-body">
             <div class="container">
-                <h1 class="title">
+                <h1 class="title is-centered">
                     Red or Black?
                 </h1>
                 <h2 class="subtitle">
-                    Current Score:
+                    Current Score: <span id="currentScore">10</span>
                 </h2>
             </div>
         </div>
+    </section> -->
+        <div class="hero-head">
+            <header class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item">
+                            <!-- <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo"> -->
+                            <h1 class="title is-centered">
+                                Red or Black?
+                            </h1>
+                        </a>
+                        <span class="navbar-burger burger" data-target="navbarMenuHeroC">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenuHeroC" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item is-active">
+                                Home
+                            </a>
+                            <a class="navbar-item">
+                                Customise
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
     </section>
+
 
     <!-- DISPLAY -->
     <section>
         <div class="columns is-mobile is-centered">
             <div class="column is-half">
-                <figure class="image is-centered">
-                    <img id="cardDisplay"src="https://deckofcardsapi.com/static/img/KH.png">
+                <figure class="image is-centered mt-2">
+                    <img id="cardDisplay"
+                        src="https://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_1024x1024.png?v=1523371937">
                 </figure>
+                <div id="redBlackContainer"class="buttons has-addons is-centered are-large mt-2">
+                    <button id="redButton" class="button">Red</button>
+                    <button id="blackButton" class="button">Black</button>
+                </div>
+                <div id="nextButtonContainer" class="buttons has-addons is-centered are-large mt-2 is-hidden">
+                    <button id="nextButton" class="button">Next</button>
+                </div>
             </div>
         </div>
     </section>
 
+    <script src="/js/index.js"></script>
 </body>
 
 </html>
