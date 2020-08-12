@@ -31,24 +31,41 @@ function showCard(card,guess) {
     updateScore(card.cards[0].suit,guess);
     document.getElementById("cardCount").innerHTML = card.remaining;
     document.getElementById("cardImage").innerHTML = "<img id='cardDisplay' src='" + card.cards[0].image + "'>";
+    
+    if (card.remaining == "0") {
+        document.getElementById("restartButtonContainer").classList.toggle("is-hidden");
+    } else {
+        document.getElementById("nextButtonContainer").classList.toggle("is-hidden");
+    }
 }
 
 // button listeners
 document.getElementById("redButton").addEventListener("click", function () {
     document.getElementById("redBlackContainer").classList.toggle("is-hidden");
-    document.getElementById("nextButtonContainer").classList.toggle("is-hidden");
     const deckId = document.getElementById("deckId").textContent;
     flipCard(deckId,["HEARTS","DIAMONDS"]);
 });
 document.getElementById("blackButton").addEventListener("click", function () {
     document.getElementById("redBlackContainer").classList.toggle("is-hidden");
-    document.getElementById("nextButtonContainer").classList.toggle("is-hidden");
     const deckId = document.getElementById("deckId").textContent;
     flipCard(deckId,["CLUBS","SPADES"]);
 });
 document.getElementById("nextButton").addEventListener("click", function () {
     document.getElementById("redBlackContainer").classList.toggle("is-hidden");
     document.getElementById("nextButtonContainer").classList.toggle("is-hidden");
+    document.getElementById("cardImage").innerHTML = "<img id='cardDisplay' src='https://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_1024x1024.png?v=1523371937'>";
+});
+// document.getElementById("restartButton").addEventListener("click", function () {
+//     document.getElementById("restartButtonContainer").classList.toggle("is-hidden");
+//     document.getElementById("redBlackContainer").classList.toggle("is-hidden");
+//     newDeck();
+// });
+
+
+// dropdown menu
+document.getElementById("dropdownButton").addEventListener("click", function () {
+    document.getElementById("dropdownButton").classList.toggle("is-active");
+    document.getElementById("navbarMenuHero").classList.toggle("is-active");
 });
 
 // restart modal functions
