@@ -1,5 +1,7 @@
 function newDeck() {
     document.getElementById("cardCount").innerHTML = "52";
+    document.getElementById("pointCount").innerHTML = "0";
+    document.getElementById("cardImage").innerHTML = "<img id='cardDisplay' src='https://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_1024x1024.png?v=1523371937'>";
     const fetchPromise = fetch("/newDeck"); 
     const streamPromise = fetchPromise.then((response) => response.json()); 
     streamPromise.then((data) => storeDeck(data));
@@ -31,6 +33,7 @@ function showCard(card,guess) {
     document.getElementById("cardImage").innerHTML = "<img id='cardDisplay' src='" + card.cards[0].image + "'>";
 }
 
+// button listeners
 document.getElementById("redButton").addEventListener("click", function () {
     document.getElementById("redBlackContainer").classList.toggle("is-hidden");
     document.getElementById("nextButtonContainer").classList.toggle("is-hidden");
@@ -46,6 +49,22 @@ document.getElementById("blackButton").addEventListener("click", function () {
 document.getElementById("nextButton").addEventListener("click", function () {
     document.getElementById("redBlackContainer").classList.toggle("is-hidden");
     document.getElementById("nextButtonContainer").classList.toggle("is-hidden");
+});
+
+// restart modal functions
+document.getElementById("restartButton").addEventListener("click", function () {
+    document.getElementById("restartModal").classList.toggle("is-active");
+});
+
+document.getElementById("modalBackground").addEventListener("click", function () {
+    document.getElementById("restartModal").classList.toggle("is-active");
+});
+document.getElementById("noModalButton").addEventListener("click", function () {
+    document.getElementById("restartModal").classList.toggle("is-active");
+});
+document.getElementById("yesModalButton").addEventListener("click", function () {
+    document.getElementById("restartModal").classList.toggle("is-active");
+    newDeck();
 });
 
 window.onload = function() {
