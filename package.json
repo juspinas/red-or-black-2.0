@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/juspinas/red-or-black-2.0#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
   }
 }
