@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 
-<body>
+<body id="background">
     <!-- HEADER -->
-    <section class="hero is-light">
+    <section id="navbar" class="hero is-light">
         <div class="hero-head">
             <header class="navbar">
                 <div class="container">
@@ -29,10 +29,10 @@
                     </div>
                     <div id="navbarMenuHero" class="navbar-menu">
                         <div class="navbar-end">
-                            <a class="navbar-item">
-                                Customise
+                            <a id="darkLightNavButton"class="navbar-item">
+                                Dark Mode
                             </a>
-                            <a id="restartButtonModal" class="navbar-item">
+                            <a id="restartNavButton" class="navbar-item">
                                 Restart
                             </a>
                         </div>
@@ -46,7 +46,7 @@
     <section>
         <div class="columns is-mobile is-centered">
             <div class="column is-half">
-                <h1 id="pointText">Points: <span id="pointCount">0</span></h1>
+                <h1 id="pointText">Correct: <span id="pointCount">0</span></h1>
                 <figure id="cardImage" class="image is-centered mt-2">
                 </figure>
                 <h1 id="remainingText">Remaining Cards: <span id="cardCount"></span></h1>

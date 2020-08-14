@@ -1,5 +1,4 @@
 // getting a shuffled new deck
-const lololol = 10;
 function newDeck() {
     document.getElementById("cardCount").innerHTML = "52";
     document.getElementById("pointCount").innerHTML = "0";
@@ -17,6 +16,8 @@ function updateScore(suit,guess) {
     if (guess.includes(suit)) {
         let current = parseInt(document.getElementById("pointCount").textContent);
         document.getElementById("pointCount").innerText = (current + 1).toString();
+        document.getElementById("pointText").classList.add("correctAnimation");
+    } else {
     }
 }
 
@@ -58,6 +59,7 @@ document.getElementById("nextButton").addEventListener("click", function () {
     document.getElementById("redBlackContainer").classList.remove("is-hidden");
     document.getElementById("nextButtonContainer").classList.add("is-hidden");
     document.getElementById("cardImage").innerHTML = "<img id='cardDisplay' src='https://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_1024x1024.png?v=1523371937'>";
+    document.getElementById("pointText").classList.remove("correctAnimation");
 });
 document.getElementById("restartButton").addEventListener("click", function () {
     document.getElementById("restartButtonContainer").classList.add("is-hidden");
@@ -70,12 +72,21 @@ document.getElementById("dropdownButton").addEventListener("click", function () 
     document.getElementById("dropdownButton").classList.toggle("is-active");
     document.getElementById("navbarMenuHero").classList.toggle("is-active");
 });
-
+document.getElementById("darkLightNavButton").addEventListener("click", function () {
+    if (document.getElementById("navbar").classList.contains("is-light")) {
+        document.getElementById("navbar").classList.replace("is-light","is-dark")
+        document.getElementById("background").classList.add("bg-dark");
+        document.getElementById("darkLightNavButton").innerHTML = "Light Mode";
+    } else {
+        document.getElementById("navbar").classList.replace("is-dark","is-light")
+        document.getElementById("background").classList.remove("bg-dark");
+        document.getElementById("darkLightNavButton").innerHTML = "Dark Mode";
+    }
+});
 // restart modal functions
-document.getElementById("restartButtonModal").addEventListener("click", function () {
+document.getElementById("restartNavButton").addEventListener("click", function () {
     document.getElementById("restartModal").classList.toggle("is-active");
 });
-
 document.getElementById("modalBackground").addEventListener("click", function () {
     document.getElementById("restartModal").classList.toggle("is-active");
 });
